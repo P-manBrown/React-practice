@@ -1,13 +1,10 @@
-import React from "react";
+import {useState} from "react";
 import LikeButton from "./LikeButton";
 
 const Article = (props) => {
-  let isPublishState;
-  if (props.isPublished){
-    isPublishState = "公開"
-  } else {
-    isPublishState = "非公開"
-  }
+  const [isPublished, setIsPublished] = useState(false)
+  console.log(isPublished)
+
   return (
     <div>
       <h2>{props.title}</h2>
