@@ -125,8 +125,27 @@ console.log(message4);
 const myProfile2 = [ '田中', 40 ];
 const message5 =  `名前は${myProfile2[0]}です。年齢は${myProfile2[1]}です。`;
 console.log(message5);
+// 名前は田中です。年齢は40です。
 
 // 分割代入は配列でも使用することができる
 const [ name3, age3 ] = myProfile2;
 const message6 = `名前は${name3}です。年齢は${age3}です。`;
 console.log(message6);
+// 名前は田中です。年齢は40です。
+
+
+// デフォルト値
+const sayHello = (name) => console.log(`こんにちは!${name}さん!`);
+sayHello("田中");
+// こんにちは!田中さん!
+// 引数を削除すると
+sayHello();
+// こんにちは!undefinedさん!
+// undefinedはエラーが発生する可能性を高めてしまうためデフォルト値を設定する
+const sayHello2 = (name = "ゲスト") => console.log(`こんにちは!${name}さん!`);
+sayHello2();
+// こんにちは!ゲストさん!
+sayHello2("田中");
+// こんにちは!田中さん!
+
+

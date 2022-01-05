@@ -229,12 +229,33 @@ console.log(message4); // 名前は田中です。年齢は40です。
 
 var myProfile2 = ['田中', 40];
 var message5 = "\u540D\u524D\u306F".concat(myProfile2[0], "\u3067\u3059\u3002\u5E74\u9F62\u306F").concat(myProfile2[1], "\u3067\u3059\u3002");
-console.log(message5); // 分割代入は配列でも使用することができる
+console.log(message5); // 名前は田中です。年齢は40です。
+// 分割代入は配列でも使用することができる
 
 var name3 = myProfile2[0],
     age3 = myProfile2[1];
 var message6 = "\u540D\u524D\u306F".concat(name3, "\u3067\u3059\u3002\u5E74\u9F62\u306F").concat(age3, "\u3067\u3059\u3002");
-console.log(message6);
+console.log(message6); // 名前は田中です。年齢は40です。
+// デフォルト値
+
+var sayHello = function sayHello(name) {
+  return console.log("\u3053\u3093\u306B\u3061\u306F!".concat(name, "\u3055\u3093!"));
+};
+
+sayHello("田中"); // こんにちは!田中さん!
+// 引数を削除すると
+
+sayHello(); // こんにちは!undefinedさん!
+// undefinedはエラーが発生する可能性を高めてしまうためデフォルト値を設定する
+
+var sayHello2 = function sayHello2() {
+  var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "ゲスト";
+  return console.log("\u3053\u3093\u306B\u3061\u306F!".concat(name, "\u3055\u3093!"));
+};
+
+sayHello2(); // こんにちは!ゲストさん!
+
+sayHello2("田中"); // こんにちは!田中さん!
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
