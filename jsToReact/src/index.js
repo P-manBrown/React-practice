@@ -197,3 +197,52 @@ const arr5 = [40, 50];
   arr8[0] = 100;
   console.log(arr8);
   console.log(arr4);
+
+
+// mapやfilterを使用した配列の処理
+// forを使用した場合
+const nameArr = ["田中", "高橋", "佐藤"];
+for(let index = 0; index < nameArr.length; index++) {
+  console.log(`${index + 1}番目は${nameArr[index]}です`);
+  /*
+    1番目は田中です
+    2番目は高橋です
+    3番目は佐藤です
+  */
+}
+
+// mapを使用した場合
+// 新しい配列を生成する場合
+const nameArr2 = nameArr.map((name) => {
+  return name;
+})
+console.log(nameArr2)
+// ["田中", "高橋", "佐藤"]
+
+// 配列をループ処理する場合
+nameArr.map((name, index) => console.log(`${index}番目は${name}です`));
+  /*
+    1番目は田中です
+    2番目は高橋です
+    3番目は佐藤です
+  */
+
+// filter
+const numArr = [1, 2, 3, 4, 5];
+const newNumArr = numArr.filter((num) => {
+  // 条件式を記述することで条件に合致する数値のみ返却する
+  return num % 2 === 1;
+});
+console.log(newNumArr);
+// [1, 3, 5]
+
+// 実践的なmapの使用方法
+// 田中以外に「さん」をつける
+const newNameArr = nameArr.map((name) => {
+  if (name === "田中") {
+    return name;
+  } else {
+    return `${name}さん`;
+  }
+})
+console.log(newNameArr);
