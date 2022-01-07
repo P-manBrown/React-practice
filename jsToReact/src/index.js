@@ -246,3 +246,51 @@ const newNameArr = nameArr.map((name) => {
   }
 })
 console.log(newNameArr);
+
+
+
+// 三項演算子
+// 条件 ? trueの時の処理 : falseの時の処理
+const val6 = 1 > 0 ? 'trueです' : 'falseです';
+console.log(val6);
+// trueです
+
+const num3 = "1300";
+console.log(num3.toLocaleString());
+// 1,300
+// toLocaleStringはJavaScript標準の関数で3桁カンマ表記に変換してくれる
+
+const formattedNum = typeof num3 === 'number' ? num3.toLocaleString() : '数値を入力してください';
+console.log(formattedNum);
+// num3が数値以外の場合は'数値を入力してください'、数値の場合は1,300等になる
+
+const checkSum = (num1, num2) => {
+  return num1 + num2 > 100 ? '100を超えています' : '許容範囲内です';
+}
+console.log(checkSum(30,100));
+// 引数の合計が100を超えていれば'100を超えています'、超えていなければ'許容範囲内です'
+
+
+
+// 論理演算子(&&や||等)の本当の意味を知ろう
+const flag1 = true;
+const flag2 = false;
+
+// 論理演算子に対する一般的な認識
+if (flag1 || flag2) {
+  console.log("1か2はtrueになります");
+}
+if (flag1 && flag2) {
+  console.log("1も2もtrueになります");
+}
+
+// || は左側がfalseなら右側を返す
+const num = null;
+const fee = num || "金額未設定です";
+console.log(fee);
+// 金額未設定です
+
+// && は左側がtrueなら右側を返す
+const num4 = 100;
+const fee2 = num4 && "値が設定されました";
+console.log(fee2);
