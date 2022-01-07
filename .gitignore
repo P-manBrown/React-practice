@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 jsToReact/node_modules
+JSTodo/node_modules
 /.pnp
 .pnp.js
 
