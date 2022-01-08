@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
 	<title>JSTodoList</title>
 	<meta charset="UTF-8" />
 </head>
 
 <body>
-  <div>
+  <!-- 追加フォーム -->
+  <div class="input-area">
     <input placeholder="TODOを入力" />
     <button>追加</button>
   </div>
-  <div>
-    <p>未完了のTODO</p>
+  <!-- 未完了一覧 -->
+  <div class="incomplete-area">
+    <p class="title">未完了のTODO</p>
     <ul>
       <li>
-        <div>
+        <div class="list-row">
+          <p>タスク</p>
+          <button>完了</button>
+          <button>削除</button>
+        </div>
+      </li>
+      <li>
+        <div class="list-row">
           <p>タスク</p>
           <button>完了</button>
           <button>削除</button>
@@ -23,11 +33,12 @@
       </li>
     </ul>
   </div>
-  <div>
-    <p>完了したTODO</p>
+  <!-- 完了済み一覧 -->
+  <div class="complete-area">
+    <p class="title">完了したTODO</p>
     <ul>
       <li>
-        <div>
+        <div class="list-row">
           <p>完了タスク</p>
           <button>戻す</button>
         </div>
