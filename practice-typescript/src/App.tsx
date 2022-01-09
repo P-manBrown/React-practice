@@ -3,6 +3,8 @@ import './App.css';
 import axios from 'axios';
 import { Todo } from './Todo';
 import { TodoType } from './types/todo';
+import { Text } from './Text';
+import { UserProfile } from './UserProfile';
 
 // typeは大文字から始めると良い
 // typeで型の指定を行う
@@ -13,6 +15,11 @@ import { TodoType } from './types/todo';
 //   "title": string;
 //   "completed": boolean;
 // };
+
+const user = {
+  name: "田中",
+  // hobbies: ["読書", "筋トレ"],
+}
 
 function App() {
   // stateに対する型指定
@@ -26,6 +33,13 @@ function App() {
   };
   return (
     <div className="App">
+      <UserProfile
+        user={user}
+      />
+      <Text
+        color="red"
+        fontSize="18px"
+      />
       <button onClick={onCliCkFetchData}>データ取得</button>
       {todos.map((todo) => (
         <Todo
