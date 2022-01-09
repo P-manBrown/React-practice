@@ -1,3 +1,7 @@
+// ライブラリによっては型定義を別途インストールする必要がある。
+// 見分け方は、Gitでsample.d.tsがあるかないか。package.jsonにtyping: 'sample.d.ts'があるか
+// なければインストールが必要
+
 import React,{useState} from 'react';
 import './App.css';
 import axios from 'axios';
