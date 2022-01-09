@@ -2,16 +2,17 @@ import React,{useState} from 'react';
 import './App.css';
 import axios from 'axios';
 import { Todo } from './Todo';
+import { TodoType } from './types/todo';
 
 // typeは大文字から始めると良い
 // typeで型の指定を行う
 // セミコロンで区切る
-type TodoType = {
-  "userId": number;
-  "id": number;
-  "title": string;
-  "completed": boolean;
-};
+// type TodoType = {
+//   "userId": number;
+//   "id": number;
+//   "title": string;
+//   "completed": boolean;
+// };
 
 function App() {
   // stateに対する型指定
@@ -28,6 +29,7 @@ function App() {
       <button onClick={onCliCkFetchData}>データ取得</button>
       {todos.map((todo) => (
         <Todo
+          key={todo.id}
           title={todo.title}
           userId={todo.userId}
           completed={todo.completed}
